@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/*
+*
+*  공통 CSS 소스
+*  : 기본 엘리먼트 CSS
+*
+*/
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+  Font-family: "Arial", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0; }
+
+* {
+  position: relative;
+  display: block; }
+
+a {
+  text-decoration: none; }
+
+/* ul 태그 - 기본 UI 제거 ▼ */
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  /* ul - 가로 리스트 */
+  /* ul - 세로 리스트 */ }
+  ul.ul-h > li {
+    float: left;
+    clear: none; }
+  ul.ul-v > li {
+    clear: both; }
+
+/* ul 태그 - 기본 UI 제거 ▲ */
+/* 커스텀 : 버튼 (custom button) ▼ */
+button.btn {
+  border-style: solid;
+  display: block;
+  cursor: pointer;
+  -webkit-transition-duration: .1s;
+  -moz-transition-duration: .1s;
+  transition-duration: .1s;
+  /* 버튼 : 이미지 타입(btn-img) ▼ */
+  /* 버튼 : 이미지 타입(btn-img) ▲ */ }
+  button.btn.btn-img {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: none;
+    outline: 0; }
+
+/* 커스텀 : 버튼 (custom button) ▲ */
+/* 라벨(label) ▼ */
+label {
+  float: left; }
+  label > span.text {
+    float: left; }
+  label > span.licon {
+    background-repeat: no-repeat;
+    background-position: center; }
+    label > span.licon.licon-l {
+      float: left; }
+    label > span.licon.licon-r {
+      float: right; }
+
+/* 라벨(label) ▲ */
+
+/*# sourceMappingURL=common.css.map */

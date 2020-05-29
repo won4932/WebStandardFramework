@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+
+    <!-- 캐릭터 셋 : UTF-8 -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- 렌더링 : 최신 표준 모드 렌더링 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Cache 해제 / 서버에서 항상 페이지 불러옴 -->
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-store" />
+
+    <!-- 페이지 뷰 사이즈 : 디바이스에 너비 맞춤, 최초 비율, 최대 비율, 최소 비율, 사용자 Zoom In/Out 설정 방지 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <!-- 전화 설정 : 전화번호 형식 자동 연결 설정 Yes/No -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- 모바일 - 스크롤 설정 : 스크롤 Down - 주소창 감추기 / Up - 주소창 보이기 -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- 타이틀 : 검색에서 보여질 타이틀 -->
+    <meta name="title" content="Product Intro" />
+    <!-- 설명 : 검색에서 보여질 설명 -->
+    <meta name="description" content="" />
+    <meta name="Date" content="2019-05" /> <!-- 제작일 -->
+
+    <!-- 페이지에서 쓰이는 스크립트/스타일시트 언어 설정 -->
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <!-- HTML 5 스크립트 -->
+    <script src="./plugin/html5shiv/html5shiv-master/dist/html5shiv.js"></script>
+    <!-- Jquery 3.2.1 -->
+    <script src="./plugin/jquery/jquery-3.2.1.js"></script>
+    <script src="./plugin/jquery/jquery-3.2.1.min.js"></script>
+    <script src="./plugin/jquery/jquery-migrate-3.0.0.js"></script>
+    <script src="./plugin/jquery/jquery-migrate-3.0.0.min.js"></script>
+    <script src="./plugin/jquery/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./plugin/jquery/jquery-ui-1.12.1/jquery-ui.css"></link>
+
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/common.css"></link>
+
+    <!-- 미디어쿼리 (Media Query) 스타일시트 참조 -->
+    <link rel="stylesheet" media="all and (min-width:320px) and (max-width: 359px)" href="./css/index-sp-320.css" ></link>
+		<link rel="stylesheet" media="all and (min-width:360px) and (max-width: 479px)" href="./css/index-sp-360.css" ></link>
+		<link rel="stylesheet" media="all and (min-width:480px) and (max-width: 539px)" href="./css/index-sp-480.css" ></link>
+    <link rel="stylesheet" media="all and (min-width:540px) and (max-width: 639px)" href="./css/index-sp-540.css" ></link>
+    <link rel="stylesheet" media="all and (min-width:640px) and (max-width: 749px)" href="./css/index-sp-640.css" ></link>
+    <link rel="stylesheet" media="all and (min-width: 750px)" href="./css/index-pc.css" ></link>
+
+  </head>
+
+  <body onload="loadDocument()" onresize="resizeDocument()">
+
+    <!-- 헤더 (header) ▼ -->
+    <header>
+      <!-- 헤더 > 타이틀 바 (.bg.bg-title) ▼ -->
+      <section class="bg" id="bg-title">
+        <!-- >> 패널(.panel.panel-max) ▼ -->
+        <article class="panel panel-max">
+          <!-- >> 패널 > PC 로고(.panel-box#panel-box-logo) ▼ -->
+          <div class="panel-box panel-box-l pc" id="panel-box-logo">
+            <img src="resources/logo.jpg"></img>
+          </div>
+          <!-- >> 패널 > PC 로고(.panel-box#panel-box-logo) ▲ -->
+          <!-- >> 패널 > 옵션(.panel-box#panel-box-option) ▼ -->
+          <div class="panel-box panel-box-r" id="panel-box-option">
+            <!-- >> 패널 > 옵션 > 리스트 : 옵션(.list#list-option) ▼ -->
+            <ul class="list ul-h" id="list-option">
+              <!-- >>> 옵션 - 검색 입력창(li-search-input) -->
+              <li class="li-l pc" id="li-search-input" name="head-list-option-searchtoggle">
+                <div class="tb-input" style="margin:0px 15px">
+                  <input type="text" class="input-text" value=""></input>
+                  <img class="img-label" src="resources/img_search.png"></img>
+                </div>
+              </li>
+              <!-- >>> 옵션 - 검색(li-search) -->
+              <li class="li-r" id = "li-search">
+                <button class="btn btn-img" id="btn-search" onclick="onToggleSearch()"></button>
+              </li>
+            </ul>
+            <!-- >> 패널 > 옵션 > 리스트 : 옵션(.list#list-option) ▲ -->
+          </div>
+          <!-- >> 패널 > 옵션(.panel-box#panel-box-option) ▲ -->
+        </article>
+        <!-- >> 패널(.panel.panel-max) ▲ -->
+      </section>
+      <!-- 헤더 > 타이틀 바 (.bg.bg-title) ▲ -->
+      <!-- 헤더 > PC 네비게이션 (.bg.bg-navi) ▼ -->
+      <section class="bg pc" id="bg-navi">
+        <!-- >> 패널(.panel.panel-max) ▼ -->
+        <article class="panel panel-max">
+          <!-- >> 패널 > 네비게이션 (#panel-box-navi) ▼ -->
+          <div class="panel-box panel-box-l" id="panel-box-navi">
+            <ul class="list ul-h" id="list-navi">
+              <li><strong>홈</strong></li>
+              <li class="li-split"></li>
+              <li><strong>에어컨/에어케어</strong></li>
+              <li class="li-split"></li>
+              <li><strong>공기청정기</strong></li>
+              <li class="li-split"></li>
+              <li><strong><a href='./sub.html'; style="color:white;">휴대용 공기청정기</a></strong></li>
+              <li class="li-split"></li>
+              <li><strong>AP139MWA</strong></li>
+            </ul>
+          </div>
+          <!-- >> 패널 > 네비게이션 (#panel-box-navi) ▲ -->
+        </article>
+        <!-- >> 패널(.panel.panel-max) ▲ -->
+      </section>
+      <!-- 헤더 > 네비게이션 (.bg.bg-navi) ▲ -->
+    </header>
+    <!-- 헤더 (header) ▲ -->
+
+    <!-- 컨텐츠(sections) ▼ -->
+
+    <!-- 컨텐츠 > 타이틀(.bg#bg-title) ▼ -->
+    <section class="bg" id="bg-title">
+      <article class="panel panel-full">
+        <div class="panel-box" id="panel-box-title">
+          <strong id="text-title"> LG PuriCare™ Mini 공기청정기 </strong>
+        </div>
+      </article>
+    </section>
+    <!-- 컨텐츠 > 타이틀(.bg#bg-title) ▲ -->
+
+    <!-- 컨텐츠 > 스크린(.bg#bg-screen) ▼ -->
+    <section class="bg" id="bg-screen">
+      <!-- 컨텐츠 > 스크린 > 패널(.panel) ▼ -->
+      <article class="panel panel-min">
+        <!-- >> 패널 박스 : 스크린 (.panel-box#panel-box-screen) ▼ -->
+        <div class="panel-box" id="panel-box-screen">
+          <div class="box" id="box-list">
+            <ul class="list ul-h" id="list-screen-item" name="content-list-screennavi-img">
+              <li><img src="resources/screen_img_01.jpg" onclick=videoplay();>></img></li>
+              <li><img src="resources/screen_img_02.jpg"></img></li>
+              <li><img src="resources/screen_img_03.jpg"></img></li>
+            </ul>
+          </div>
+          <div class="box" id="box-list1">
+            <ul class="list ul-h" id="list-screen-item" name="content-list-screennavi-img">
+              <li><iframe width="700" height="500" src="https://www.youtube.com/embed/8v2I0biEero" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+            </ul>
+          </div>
+        </div>
+        <!-- >> 패널 박스 : 스크린 (.panel-box#panel-box-screen) ▲ -->
+        <!-- >> 패널 박스 : 스크린 네비게이션 (.panel-box#panel-box-screennavi) ▼ -->
+        <div class="panel-box" id="panel-box-screennavi">
+          <ul class="list ul-h" id="list-screen-navi" name="content-list-screennavi-pt">
+            <li><div class="pt ac" onclick="onSelectScreenNavi(this, 0)"></div></li>
+            <li><div class="pt" onclick="onSelectScreenNavi(this, 1)"></div></li>
+            <li><div class="pt" onclick="onSelectScreenNavi(this, 2)"></div></li>
+          </ul>
+        </div>
+        <!-- >> 패널 박스 : 스크린 네비게이션 (.panel-box#panel-box-screennavi) ▲ -->
+        <!-- >> 패널 박스 : 설명 (.panel-box#panel-box-screenfoot) ▼ -->
+        <div class="panel-box" id="panel-box-screenfoot">
+          <p class="p-title"> 주요 특장점 </p>
+          <p class="p-text"> 오래쓰고 저렴한 필터 | CA인증 받은 믿을 수 있는 청정 | 휴대용 무선 공기청정기 | 쉽고 간편한 사용성 </p>
+        </div>
+        <!-- >> 패널 박스 : 설명 (.panel-box#panel-box-screenfoot) ▲ -->
+      </article>
+      <!-- 컨텐츠 > 스크린 > 패널(.panel) ▲ -->
+    </section>
+    <!-- 컨텐츠 > 스크린(.bg#bg-screen) ▲ -->
+
+    <!-- 컨텐츠 > 탭메뉴 (.bg#bg-tabmenu) ▼ -->
+    <section class="bg" id="bg-tabmenu" name="content-tabmenu">
+      <!-- 컨텐츠 > 탭메뉴 > 패널(.panel) ▼ -->
+      <article class="panel panel-max" id="d">
+        <div class="panel-box" id="panel-box-tabmenu">
+          <ul class="list ul-h">
+            <li class="li-tab">
+              <div class="tab-name"onclick="location.href='./index.html#d';"> <span> 특장점 </span> </div>
+              <div class="tab-desc pc"> <span> 오래쓰고 저렴한 필터 </span> </div>
+            </li>
+            <li class="li-space"></li>
+            <li class="li-tab">
+              <div class="tab-name" onclick="location.href='./index01.html#d';"> <span> 스펙 </span> </div>
+              <div class="tab-desc pc"> <span> CA인증 받은 믿을 수 있는 청정 </span> </div>
+            </li>
+            <li class="li-space"></li>
+            <li class="li-tab">
+              <div class="tab-name ac" onclick="location.href='./index02.html#d';"> <span> 구매혜택 </span> </div>
+              <div class="tab-desc pc"> <span> 휴대용 무선 공기청정기 </span> </div>
+            </li>
+            <li class="li-space"></li>
+            <li class="li-tab li-r">
+              <div class="tab-name"  onclick="location.href='./index03.html#d';"> <span> 제품 사용 설명서 </span> </div>
+              <div class="tab-desc pc"> <span> 쉽고 간편한 사용성 </span> </div>
+            </li>
+          </ul>
+        </div>
+      </article>
+      <!-- 컨텐츠 > 탭메뉴 > 패널(.panel) ▲ -->
+    </section>
+    <!-- 컨텐츠 > 탭메뉴 (.bg#bg-tabmenu) ▲ -->
+
+    <!-- 컨텐츠 > 전체(가로) 이미지 (.bg.bg-post-h) ▼ -->
+    <section class="bg bg-post-h">
+      <article class="panel panel-full">
+        <div class="panel-box">
+          <img src="resources/index02.jpg"></img>
+        </div>
+      </article>
+    </section>
+    <!-- 컨텐츠 > 전체(가로) 이미지 (.bg.bg-post-h) ▲ -->
+
+    
+
+    <!-- 컨텐츠 > 탭메뉴(고정) (.bg#bg-tabmenu) ▼ -->
+    <section class="bg fixed" id="bg-tabmenu" name="content-tabmenu-fixed">
+      <!-- 컨텐츠 > 탭메뉴 > 패널(.panel) ▼ -->
+      <article class="panel panel-max">
+        <div class="panel-box" id="panel-box-tabmenu">
+          <ul class="list ul-h">
+            <li class="li-tab">
+              <div class="tab-name" onclick="location.href='./index.html#d';"> <span> 특장점 </span> </div>
+              <div class="tab-desc pc"> <span> 오래쓰고 저렴한 필터 </span> </div>
+            </li>
+            <li class="li-space"></li>
+            <li class="li-tab">
+              <div class="tab-name" onclick="location.href='./index01.html#d';"> <span> 스펙 </span> </div>
+              <div class="tab-desc pc"> <span> CA인증 받은 믿을 수 있는 청정 </span> </div>
+            </li>
+            <li class="li-space" onclick="location.href='./index02.html#d';"></li>
+            <li class="li-tab">
+              <div class="tab-name ac"> <span> 구매혜택 </span> </div>
+              <div class="tab-desc pc"> <span> 휴대용 무선 공기청정기 </span> </div>
+            </li>
+            <li class="li-space"></li>
+            <li class="li-tab li-r">
+              <div class="tab-name"  onclick="location.href='./index03.html#d';"> <span> 제품 사용 설명서 </span> </div>
+              <div class="tab-desc pc"> <span> 쉽고 간편한 사용성 </span> </div>
+            </li>
+          </ul>
+        </div>
+      </article>
+      <!-- 컨텐츠 > 탭메뉴 > 패널(.panel) ▲ -->
+    </section>
+    <!-- 컨텐츠 > 탭메뉴(고정) (.bg#bg-tabmenu) ▲ -->
+
+    <!-- 풋터 (footer) ▼ -->
+    <footer>
+      <!-- 헤더 > 풋터 네비게이션 (.bg.bg-footnavi) ▼ -->
+      <section class="bg" id="bg-footnavi">
+        <article class="panel panel-max">
+          <div class="panel-box">
+            <ul class="list ul-v" id="list-navi">
+              <li> <a href="">개인정보처리방침</a> <span>&nbsp;|&nbsp;</span> <a href="">이용약관</a> <span>&nbsp;|&nbsp;</span> <a href="">이메일무단수집거부</a> <span>&nbsp;|&nbsp;</span> <a href="">소식지 신청</a> <span> | </span> <a href="">정도 경영 사이버 신문고</a> </li>
+              <li> </li>
+              <li> <span>대표이사: 조성진, 정도현   사업자등록번호: 107-86-14075 통신판매업신고번호: 제1997-00084호 대표번호: 02-3777-1114 </span> </li>
+              <li> <span>주소: 서울시 영등포구 여의대로 128 LG트윈타워 제품 및 서비스 문의 : 1544-7777 </span> </li>
+              <li> </li>
+              <li> <span>Copyright © 2015 LG Electronics. All Rights Reserved.</span> </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+      <!-- 헤더 > 풋터 네비게이션 (.bg.bg-footnavi) ▲ -->
+    </footer>
+    <!-- 풋터 (footer) ▲ -->
+    <script>
+    
+      function videoplay(){
+          var win=window.open("./video.html","popwin","width=1286,height=663");
+      }
+      </script>
+  </body>
+
+</html>

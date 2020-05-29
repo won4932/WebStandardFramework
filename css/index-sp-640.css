@@ -1,0 +1,294 @@
+@charset "UTF-8";
+/*
+*
+*  index.html css
+*  : SP(640) 버전 css 코드
+*
+*/
+/*
+*
+*  scss rule
+* : SP(640) 버전 scss 코드
+* : css 변수 정의
+*
+*/
+/*
+  바디 body ▼
+*/
+body {
+  min-width: 640px;
+  font-size: 10px; }
+  body .pc {
+    display: none; }
+
+/*
+  헤더 header ▼
+*/
+body > header {
+  clear: both; }
+  body > header .bg {
+    clear: both; }
+    body > header .bg > .panel {
+      clear: both; }
+      body > header .bg > .panel > .panel-box:first-child {
+        margin-left: 15px; }
+      body > header .bg > .panel > .panel-box:last-child {
+        margin-right: 15px; }
+      body > header .bg > .panel > .panel-box.panel-box-l {
+        float: left; }
+      body > header .bg > .panel > .panel-box.panel-box-r {
+        float: right; }
+  body > header .bg#bg-title {
+    background-color: #FFFFFF;
+    height: 50px;
+    max-height: 50px; }
+    body > header .bg#bg-title > .panel {
+      background-image: url("resources/logo.jpg");
+      background-size: auto 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 50px;
+      max-height: 50px; }
+      body > header .bg#bg-title > .panel > .panel-box {
+        height: 50px;
+        max-height: 50px; }
+        body > header .bg#bg-title > .panel > .panel-box#panel-box-option ul.list#list-option {
+          height: 50px;
+          max-height: 50px; }
+          body > header .bg#bg-title > .panel > .panel-box#panel-box-option ul.list#list-option > li {
+            height: inherit;
+            max-height: inherit; }
+            body > header .bg#bg-title > .panel > .panel-box#panel-box-option ul.list#list-option > li li.li-r {
+              float: right; }
+            body > header .bg#bg-title > .panel > .panel-box#panel-box-option ul.list#list-option > li li.il-l {
+              float: left; }
+            body > header .bg#bg-title > .panel > .panel-box#panel-box-option ul.list#list-option > li > .btn-img {
+              background-size: 24px;
+              background-repeat: no-repeat;
+              width: 24px;
+              height: 24px;
+              top: 13px; }
+              body > header .bg#bg-title > .panel > .panel-box#panel-box-option ul.list#list-option > li > .btn-img#btn-search {
+                background-image: url("resources/btn_search.png"); }
+
+/* 헤더 header ▲ */
+/*
+  바닥 footer ▼
+*/
+body > footer {
+  background-color: #007b87;
+  clear: both;
+  color: #FFFFFF;
+  padding: 15px 0px 35px 0px; }
+  body > footer .bg {
+    clear: both; }
+    body > footer .bg > .panel {
+      clear: both; }
+      body > footer .bg > .panel > .panel-box {
+        clear: both; }
+  body > footer .bg#bg-footnavi .panel .panel-box > .list#list-navi {
+    height: auto;
+    clear: both;
+    text-align: center; }
+    body > footer .bg#bg-footnavi .panel .panel-box > .list#list-navi > li {
+      height: 20px;
+      max-height: 20px;
+      line-height: 20px; }
+      body > footer .bg#bg-footnavi .panel .panel-box > .list#list-navi > li > a {
+        display: inline-block;
+        color: #ffffff;
+        font-weight: bold; }
+      body > footer .bg#bg-footnavi .panel .panel-box > .list#list-navi > li > span {
+        display: inline-block; }
+
+/* 바닥 footer ▲ */
+/*
+  섹션(컨텐츠) section ▼
+*/
+body > section {
+  clear: both;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+  body > section#bg-title {
+    height: 50px;
+    max-height: 50px;
+    line-height: 50px;
+    margin-top: 30px;
+    margin-bottom: 10px; }
+    body > section#bg-title > .panel {
+      height: 50px;
+      max-height: 50px;
+      clear: both;
+      line-height: 50px; }
+      body > section#bg-title > .panel > .panel-box#panel-box-title {
+        height: inherit;
+        max-height: inherit;
+        clear: both;
+        text-align: center; }
+        body > section#bg-title > .panel > .panel-box#panel-box-title > strong {
+          font-size: 3.0em; }
+  body > section#bg-screen {
+    height: auto; }
+    body > section#bg-screen > .panel {
+      height: auto;
+      clear: both; }
+      body > section#bg-screen > .panel > .panel-box {
+        clear: both; }
+      body > section#bg-screen > .panel > .panel-box#panel-box-screen {
+        height: auto; }
+        body > section#bg-screen > .panel > .panel-box#panel-box-screen > .box#box-list {
+          width: 500px;
+          max-width: 500px;
+          clear: both;
+          left: 50%;
+          margin-left: -250px;
+          overflow: hidden; }
+          body > section#bg-screen > .panel > .panel-box#panel-box-screen > .box#box-list > .list#list-screen-item {
+            width: 1500px;
+            max-width: 1500px;
+            height: 250px;
+            max-height: 250px;
+            clear: both; }
+            body > section#bg-screen > .panel > .panel-box#panel-box-screen > .box#box-list > .list#list-screen-item > li {
+              width: 500px;
+              height: 250px; }
+              body > section#bg-screen > .panel > .panel-box#panel-box-screen > .box#box-list > .list#list-screen-item > li > img {
+                width: inherit;
+                height: inherit;
+                clear: both; }
+      body > section#bg-screen > .panel > .panel-box#panel-box-screennavi {
+        height: 50px;
+        max-height: 50px; }
+        body > section#bg-screen > .panel > .panel-box#panel-box-screennavi > .list#list-screen-navi {
+          width: 150px;
+          height: 50px;
+          clear: both;
+          left: 50%;
+          margin-left: -75px; }
+          body > section#bg-screen > .panel > .panel-box#panel-box-screennavi > .list#list-screen-navi > li {
+            width: 50px;
+            height: 50px; }
+            body > section#bg-screen > .panel > .panel-box#panel-box-screennavi > .list#list-screen-navi > li > div.pt {
+              width: 12px;
+              height: 12px;
+              margin: 19px;
+              border-radius: 1.0em;
+              border: 1px solid #808080; }
+              body > section#bg-screen > .panel > .panel-box#panel-box-screennavi > .list#list-screen-navi > li > div.pt.ac {
+                background-color: #ae1948;
+                border-color: #ae1948; }
+      body > section#bg-screen > .panel > .panel-box#panel-box-screenfoot {
+        height: auto;
+        border-bottom: 1px solid #999999; }
+        body > section#bg-screen > .panel > .panel-box#panel-box-screenfoot > p {
+          margin: 0.5em 15px; }
+        body > section#bg-screen > .panel > .panel-box#panel-box-screenfoot > p.p-title {
+          font-size: 2.0em; }
+        body > section#bg-screen > .panel > .panel-box#panel-box-screenfoot > p.p-text {
+          font-size: 1.25em; }
+  body > section#bg-tabmenu {
+    background-color: #FFFFFF;
+    height: auto; }
+    body > section#bg-tabmenu.fixed {
+      width: 100%;
+      position: fixed;
+      top: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      display: none; }
+    body > section#bg-tabmenu > .panel {
+      clear: both; }
+      body > section#bg-tabmenu > .panel > .panel-box {
+        clear: both; }
+      body > section#bg-tabmenu > .panel > .panel-box#panel-box-tabmenu > .list {
+        height: 32px;
+        max-height: 32px;
+        clear: both; }
+        body > section#bg-tabmenu > .panel > .panel-box#panel-box-tabmenu > .list > li {
+          height: inherit;
+          max-height: inherit;
+          text-align: center;
+          overflow: hidden; }
+        body > section#bg-tabmenu > .panel > .panel-box#panel-box-tabmenu > .list > li.li-r {
+          float: right; }
+        body > section#bg-tabmenu > .panel > .panel-box#panel-box-tabmenu > .list > li.li-space {
+          width: .5%; }
+        body > section#bg-tabmenu > .panel > .panel-box#panel-box-tabmenu > .list > li.li-tab {
+          width: 24.5%; }
+        body > section#bg-tabmenu > .panel > .panel-box#panel-box-tabmenu > .list > li.li-tab > div {
+          clear: both; }
+          body > section#bg-tabmenu > .panel > .panel-box#panel-box-tabmenu > .list > li.li-tab > div.tab-name {
+            background-color: #08af96;
+            height: 30px;
+            max-height: 30px;
+            line-height: 30px;
+            border-bottom: 2px solid #333333; }
+            body > section#bg-tabmenu > .panel > .panel-box#panel-box-tabmenu > .list > li.li-tab > div.tab-name > span {
+              color: #ffffff;
+              font-size: 1.25em;
+              font-weight: bold; }
+            body > section#bg-tabmenu > .panel > .panel-box#panel-box-tabmenu > .list > li.li-tab > div.tab-name.ac {
+              background-color: #666666; }
+  body > section.bg-post-h > .panel {
+    clear: both; }
+  body > section.bg-post-h > .panel > .panel-box {
+    width: 100%;
+    clear: both; }
+    body > section.bg-post-h > .panel > .panel-box > img {
+      background-color: #000;
+      width: 100%;
+      height: auto;
+      clear: both; }
+  body > section.bg-pop.pop-intro .panel {
+    height: auto;
+    clear: both; }
+    body > section.bg-pop.pop-intro .panel > .panel-box {
+      width: 500px;
+      height: auto;
+      clear: both;
+      left: 50%;
+      margin-left: -250px; }
+    body > section.bg-pop.pop-intro .panel > .panel-box#panel-box-desc > p {
+      line-height: 50%;
+      clear: both; }
+      body > section.bg-pop.pop-intro .panel > .panel-box#panel-box-desc > p.p-title {
+        font-size: 2.0em;
+        font-weight: bold; }
+      body > section.bg-pop.pop-intro .panel > .panel-box#panel-box-desc > p.p-desc {
+        font-size: 1.25em; }
+    body > section.bg-pop.pop-intro .panel > .panel-box#panel-box-img > img {
+      width: 500px;
+      height: auto; }
+  body > section.bg-pop.pop-alert {
+    height: auto; }
+    body > section.bg-pop.pop-alert .panel {
+      background-color: #f9f9fb;
+      padding: 40px 0px; }
+      body > section.bg-pop.pop-alert .panel > .panel-box {
+        height: auto;
+        clear: both;
+        text-align: center; }
+        body > section.bg-pop.pop-alert .panel > .panel-box > span {
+          line-height: 1.5em;
+          word-break: break-all; }
+
+/* 섹션(컨텐츠) section ▲ */
+/* 미디엍 쿼리 (media query) : 브라우저 가로 길이가 640px 보다 이상인 경우 ▼ */
+@media (min-width: 640px) {
+  body {
+    overflow-x: none !important; }
+
+  .panel.panel-min {
+    width: 450px;
+    max-width: 450px;
+    left: 50%;
+    margin-left: -225px; }
+
+  .panel.panel-max {
+    width: 640px;
+    max-width: 640px;
+    left: 50%;
+    margin-left: -320px; } }
+/* 미디엍 쿼리 (media query) : 브라우저 가로 길이가 640px 보다 이상인 경우 ▲ */
+
+/*# sourceMappingURL=index-sp-640.css.map */
